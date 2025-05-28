@@ -65,3 +65,32 @@ class TheQuizzler:
         # Creating an exit button to close the application (The Quizzler Maker)
         self.exit_button = tk.Button(main_frame, text="Exit", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.exit_program)
         self.exit_button.pack(pady=(10, 0))
+
+    def save_all_inputs(self):
+        # Getting the user's input for question, answer, and choices
+        question = self.question_entry.get()
+        answer = self.answer_entry.get()
+        choices = [entry.get() for entry in self.choice_entries]
+
+        # Validation of inputs
+        if not question:
+            messagebox.showerror("ERROR!", "Question block cannot be empty.")
+            return
+
+        elif not answer:
+            messagebox.showerror("ERROR!", "Answer block cannot be empty.")
+            return
+
+        if "" in choices:
+            messagebox.showerror("ERROR!", "All choices must be filled.")
+            return
+
+        # Append the question, answer, and choices to the stored list and save to file
+        self.logic.add_question(question, answer, choices)
+        self.logic.save_to_file()
+        
+        # Clear all input fields for new data
+        self.clear_field()
+
+        # Show a success message to the user
+        messagebox.showinfo("SUCCESS!", "All the inputs have been saved successfully!")
