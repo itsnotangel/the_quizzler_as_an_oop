@@ -57,3 +57,11 @@ class TheQuizzler:
             entry = tk.Entry(choice_frame)
             entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
             self.choice_entries.append(entry)
+
+        # Creating a save button to save the user's inputted question, answer, and choices
+        self.save_button = tk.Button(main_frame, text="Save", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.save_all_inputs)
+        self.save_button.pack(pady=(10, 0))
+
+        # Creating an exit button to close the application (The Quizzler Maker)
+        self.exit_button = tk.Button(main_frame, text="Exit", font=("Arial", 8, "bold"), fg="darkred", width=15, command=self.exit_program)
+        self.exit_button.pack(pady=(10, 0))
