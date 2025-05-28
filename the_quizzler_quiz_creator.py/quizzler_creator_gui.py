@@ -35,3 +35,25 @@ class TheQuizzler:
 
         # Getting the window size and printing it to the console (Only for checking the size)
         print(f"Window Size: {self.root.winfo_width()}x{self.root.winfo_height()}")
+
+        # Adding a "Choices" label text 
+        tk.Label(main_frame, text="Choices:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+
+        # Creating a list of entries storing the choices inputted by the user
+        self.choice_entries = []
+
+        # Assigning labels for each choice entry (A - D)
+        self.choice_labels = ['A', 'B', 'C', 'D']
+
+        # Looping over the choices to assign a labels for each one
+        for i in range(4):
+            choice_frame = tk.Frame(main_frame)
+            choice_frame.pack(fill=tk.X, padx=20, pady=5)
+
+            choice_label = tk.Label(choice_frame, text=f"{self.choice_labels[i]}:", font=("Arial", 8, "bold"), fg="black", anchor="w")
+            choice_label.pack(side=tk.LEFT, padx=5)
+
+            # Adding an entry box for each choice (A, B, C, D)
+            entry = tk.Entry(choice_frame)
+            entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+            self.choice_entries.append(entry)
