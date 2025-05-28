@@ -94,3 +94,14 @@ class TheQuizzler:
 
         # Show a success message to the user
         messagebox.showinfo("SUCCESS!", "All the inputs have been saved successfully!")
+
+    # Function to clear the input field 
+    def clear_field(self):
+        self.question_entry.delete(0, tk.END)
+        self.answer_entry.delete(0, tk.END)
+        for entry in self.choice_entries:
+            entry.delete(0, tk.END)
+
+    # Exiting the program method
+    def exit_program(self):
+        self.root.destroy()
