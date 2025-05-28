@@ -22,3 +22,16 @@ class TheQuizzler:
         # Adding an instruction label to guide the user on how to use the application
         instruction = tk.Label(main_frame, text="Enter the question, answer (strictly letters A, B, C, or D), and \nfour choices.", font=("Arial", 10), fg="grey")
         instruction.pack(fill=tk.X, pady=(0, 10))
+
+        # Adding the question box for user to input their questions
+        tk.Label(main_frame, text="Question:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        self.question_entry = tk.Entry(main_frame)
+        self.question_entry.pack(fill=tk.X, padx=23)
+
+        # Adding the answer box for user to input the correct answer
+        tk.Label(main_frame, text="Correct Answer:", font=("Arial", 8, "bold"), fg="darkred", anchor="w").pack(fill=tk.X, padx=20, pady=(10, 0))
+        self.answer_entry = tk.Entry(main_frame)
+        self.answer_entry.pack(fill=tk.X, padx=23)
+
+        # Getting the window size and printing it to the console (Only for checking the size)
+        print(f"Window Size: {self.root.winfo_width()}x{self.root.winfo_height()}")
