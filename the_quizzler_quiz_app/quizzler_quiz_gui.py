@@ -98,3 +98,16 @@ class TheQuizzlerApp:
             for button in self.choice_buttons:
                 button.config(state=tk.DISABLED)
             self.next_question_button.config(state=tk.DISABLED)
+
+    def check_answer(self, selected_answer):
+        correct, correct_answer = self.logic.check_answer(selected_answer)
+
+        if correct:
+            messagebox.showinfo("CORRECT!", "You selected the correct answer!")
+        else:
+            messagebox.showerror("INCORRECT!", f"The correct answer to that is {correct_answer}.")
+
+        for button in self.choice_buttons:
+            button.config(state=tk.DISABLED)
+
+        self.score_label.config(text=self.logic.get_score_text())
