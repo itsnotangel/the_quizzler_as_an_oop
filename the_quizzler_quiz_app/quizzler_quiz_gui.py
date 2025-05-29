@@ -18,3 +18,15 @@ class TheQuizzlerApp:
 
         sub_title_label = tk.Label(main_frame, text="THE ULTIMATE QUIZ EDITION", font=("Arial", 20, "bold"), fg="darkred")
         sub_title_label.pack(fill=tk.X, pady=(0, 10))
+
+        self.question_frame = tk.Frame(main_frame)
+        self.question_frame.pack(fill=tk.X, padx=20, pady=10)
+        
+        self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 12), wraplength=500, justify="left")
+        self.question_label.pack(fill=tk.X, pady=10)
+
+        self.score_label = tk.Label(main_frame, text="Score: 0/0", font=("Arial", 12, "bold"), fg="darkred")
+        self.score_label.pack(fill=tk.X, pady=(0, 10))
+
+        instruction_label = tk.Label(main_frame, text="Instruction: Select the correct answer from the four choices.", font=("Arial", 10), fg="grey")
+        instruction_label.pack(fill=tk.X, pady=(0, 5))
