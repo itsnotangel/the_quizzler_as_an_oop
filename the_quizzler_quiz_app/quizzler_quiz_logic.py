@@ -26,4 +26,15 @@ class QuizzlerQuizLogic:
         else:
             self.current_question = None
             return None
+        
+    # Checks if answer is correct, updates score
+    def check_answer(self, selected_answer):
+        if self.current_question:
+            if selected_answer == self.current_question.answer:
+                self.score_count += 1
+                return True, self.current_question.answer
+            else:
+                return False, self.current_question.answer
+        return False, None
+
 
