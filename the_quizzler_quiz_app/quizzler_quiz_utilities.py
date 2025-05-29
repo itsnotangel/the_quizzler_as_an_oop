@@ -14,3 +14,12 @@ def load_quiz_questions_from_file(filename="data_for_the_quizzler.txt"):
             lines = section.strip().split("\n")
             if len(lines) < 7:
                 continue
+
+            question_text = lines[0].replace("Question", "", 1).split(":", 1)[1].strip()
+            answer = lines[1].split(":", 1)[1].strip()
+
+            choices = []
+            for i in range(3, 7):
+                if i < len(lines):
+                    choice = lines[i].split(":", 1)[1].strip()
+                    choices.append(choice)
