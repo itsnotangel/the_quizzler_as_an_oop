@@ -36,5 +36,10 @@ class QuizzlerQuizLogic:
             else:
                 return False, self.current_question.answer
         return False, None
+    
+    def get_score_text(self):
+        answered = self.total_questions - len(self.quiz_questions)
+        return f"Score: {self.score_count}/{answered}"
 
-
+    def get_final_score_text(self):
+        return f"Quiz completed! Final score: {self.score_count}/{self.total_questions}"
