@@ -1,3 +1,4 @@
+# Importing Tkinter for GUI and TheQuizzler class for launching the quiz
 import tkinter as tk
 from quizzler_creator_gui import TheQuizzler
 
