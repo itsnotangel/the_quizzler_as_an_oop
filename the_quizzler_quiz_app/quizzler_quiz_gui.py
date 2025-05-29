@@ -52,3 +52,23 @@ class TheQuizzlerApp:
             )
             button.pack(fill=tk.X)
             self.choice_buttons.append(button)
+
+            self.next_question_button = tk.Button(
+            main_frame,
+            text="NEXT QUESTION",
+            font=("Arial", 10, "bold"),
+            fg="black",
+            width=15,
+            command=self.next_question
+        )
+        self.next_question_button.pack(side=tk.LEFT, padx=20, pady=(10, 0))
+
+        self.exit_button = tk.Button(
+            main_frame,
+            text="EXIT QUIZ",
+            font=("Arial", 10, "bold"),
+            fg="black",
+            width=15,
+            command=self.root.destroy
+        )
+        self.exit_button.pack(side=tk.RIGHT, padx=20, pady=(10, 0))
