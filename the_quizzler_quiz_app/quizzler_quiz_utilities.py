@@ -1,5 +1,7 @@
+# Import messagebox to display error dialogs in case of file issues
 from tkinter import messagebox
 
+# Loads quiz questions, answers, and choices from a formatted text file
 def load_quiz_questions_from_file(filename="data_for_the_quizzler.txt"):
     try:
         with open(filename, "r") as file:
