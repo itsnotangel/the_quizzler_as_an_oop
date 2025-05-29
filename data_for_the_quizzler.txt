@@ -1,36 +1,18 @@
-Question 1: You are my sunshine, my only ____
-Answer: B
-Choices:
-A: Cloud
-B: Sunshine
-C: Rain
-D: Apple
-------------------------------
-
-Question 2: Should we vote for politically-qualified candidates this election?
+Question 1: How many hands do you have?
 Answer: D
 Choices:
-A: I don't think so
-B: Maybe
-C: No, we should not
-D: Of course, we should
+A: 6
+B: 32
+C: 89
+D: 2
 ------------------------------
 
-Question 3: How many hands do a person have?
+Question 2: Should we respect each other?
 Answer: C
 Choices:
-A: 3
-B: 10
-C: 2
-D: 1000
-------------------------------
-
-Question 4: What is the color of an orange?
-Answer: A
-Choices:
-A: Orange
-B: White
-C: Sage green
-D: They does not have color
+A: No
+B: Maybe
+C: Yes
+D: I don't know
 ------------------------------
 
