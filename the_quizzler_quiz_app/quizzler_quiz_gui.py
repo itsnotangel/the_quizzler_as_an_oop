@@ -30,3 +30,25 @@ class TheQuizzlerApp:
 
         instruction_label = tk.Label(main_frame, text="Instruction: Select the correct answer from the four choices.", font=("Arial", 10), fg="grey")
         instruction_label.pack(fill=tk.X, pady=(0, 5))
+
+        self.choices_frame = tk.Frame(main_frame)
+        self.choices_frame.pack(fill=tk.X, padx=20, pady=10)
+
+        self.choice_buttons = []
+        self.choice_labels = ["A", "B", "C", "D"]
+
+        for i in range(4):
+            choice_frame = tk.Frame(self.choices_frame)
+            choice_frame.pack(fill=tk.X, pady=5)
+
+            button = tk.Button(
+                choice_frame,
+                text=f"{self.choice_labels[i]}.",
+                font=("Arial", 10, "bold"),
+                anchor="w",
+                width=30,
+                fg="darkred",
+                command=lambda idx=i: self.check_answer(self.choice_labels[idx])
+            )
+            button.pack(fill=tk.X)
+            self.choice_buttons.append(button)
