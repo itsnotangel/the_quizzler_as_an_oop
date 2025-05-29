@@ -72,3 +72,11 @@ class TheQuizzlerApp:
             command=self.root.destroy
         )
         self.exit_button.pack(side=tk.RIGHT, padx=20, pady=(10, 0))
+
+        self.logic.load_questions()
+
+        if self.logic.quiz_questions:
+            self.next_question()
+        else:
+            messagebox.showerror("ERROR!", "There are no questions found. Make sure that you created questions.")
+            root.destroy()
