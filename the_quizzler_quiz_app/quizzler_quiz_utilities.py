@@ -28,3 +28,7 @@ def load_quiz_questions_from_file(filename="data_for_the_quizzler.txt"):
                 questions.append((question_text, answer, choices))
 
         return questions
+
+    except FileNotFoundError:
+        messagebox.showerror("ERROR!", "Quiz data file not found.")
+        return []
