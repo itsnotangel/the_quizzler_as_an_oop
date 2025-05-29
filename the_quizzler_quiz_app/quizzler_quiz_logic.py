@@ -16,3 +16,14 @@ class QuizzlerQuizLogic:
         raw_questions = load_quiz_questions_from_file()
         self.quiz_questions = [QuizQuestion(q, a, c) for q, a, c in raw_questions]
         self.total_questions = len(self.quiz_questions)
+
+    # Get next random question and remove it from the list
+    def get_next_question(self):
+        if self.quiz_questions:
+            idx = random.randint(0, len(self.quiz_questions) - 1)
+            self.current_question = self.quiz_questions.pop(idx)
+            return self.current_question
+        else:
+            self.current_question = None
+            return None
+
