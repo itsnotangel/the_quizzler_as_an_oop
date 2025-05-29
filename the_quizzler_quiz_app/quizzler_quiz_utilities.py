@@ -23,3 +23,8 @@ def load_quiz_questions_from_file(filename="data_for_the_quizzler.txt"):
                 if i < len(lines):
                     choice = lines[i].split(":", 1)[1].strip()
                     choices.append(choice)
+
+            if question_text and answer and len(choices) == 4:
+                questions.append((question_text, answer, choices))
+
+        return questions
