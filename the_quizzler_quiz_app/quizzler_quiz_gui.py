@@ -80,3 +80,21 @@ class TheQuizzlerApp:
         else:
             messagebox.showerror("ERROR!", "There are no questions found. Make sure that you created questions.")
             root.destroy()
+
+    def next_question(self):
+        for button in self.choice_buttons:
+            button.config(state=tk.NORMAL)
+
+        question = self.logic.get_next_question()
+
+        if question:
+            self.question_label.config(text=question.question_text)
+            for i in range(4):
+                self.choice_buttons[i].config(text=f"{self.choice_labels[i]}. {question.choices[i]}")
+
+            self.score_label.config(text=self.logic.get_score_text())
+        else:
+            self.question_label.config(text=self.logic.get_final_score_text())
+            for button in self.choice_buttons:
+                button.config(state=tk.DISABLED)
+            self.next_question_button.config(state=tk.DISABLED)
