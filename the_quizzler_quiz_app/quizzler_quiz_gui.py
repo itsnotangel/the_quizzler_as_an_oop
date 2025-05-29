@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 from quizzler_quiz_logic import QuizzlerQuizLogic
 
-# defines the main quiz app class handling UI and quiz functionality
+# Defines the main quiz app class handling UI and quiz functionality
 class TheQuizzlerApp:
     def __init__(self, root):
         self.root = root
