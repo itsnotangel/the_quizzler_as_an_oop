@@ -1,3 +1,4 @@
+# Importing required libraries for GUI and logic handling
 import tkinter as tk
 from tkinter import messagebox
 from quizzler_creator_data_logic import QuizzlerLogic
