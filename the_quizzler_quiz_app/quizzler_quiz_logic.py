@@ -1,3 +1,4 @@
+# Importing modules for random selection, GUI messaging, and quiz data handling
 import random
 from tkinter import messagebox
 from quizzler_quiz_question import QuizQuestion
